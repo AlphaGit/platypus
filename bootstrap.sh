@@ -13,3 +13,4 @@ rvm docs generate-ri
 rvm use 2.2.0 --default
 ruby -v
 gem install bundler rails
+ln -s /vagrant /platypus
