@@ -1,0 +1,27 @@
+<%= form_for @work_piece do |f| %>
+  <% if @work_piece.errors.any? %>
+    <p>
+      <%= pluralize(@work_piece.errors.count, "error") %> found when trying to
+      save this work piece:
+    </p>
+    <ul>
+      <% @work_piece.errors.full_messages.each do |error_msg| %>
+        <li><%= error_msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
