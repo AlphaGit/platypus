@@ -16,3 +16,5 @@
 /tmp
 
 *.sublime-workspace
+
+public/system/work_pieces/images/*

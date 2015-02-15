@@ -1,4 +1,5 @@
 <h1><%= @work_piece.title %></h1>
 <p><%= @work_piece.description %></p>
+<%= image_tag @work_piece.image.url(:medium) %>
 <%= link_to 'Back to listing', work_pieces_path %>
 <%= link_to 'Edit', edit_work_piece_path(@work_piece) %>

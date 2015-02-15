@@ -43,6 +43,6 @@ class WorkPiecesController < ApplicationController
   private
 
   def work_piece_parameters
-    params.require(:work_piece).permit(:title, :description)
+    params.require(:work_piece).permit(:title, :description, :image)
   end
 end
