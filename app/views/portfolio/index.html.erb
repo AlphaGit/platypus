@@ -2,7 +2,11 @@
 <p>Find me in app/views/portfolio/index.html.erb</p>
 <% if user_signed_in? %>
   Signed in as <%= current_user.email %>.
+  <%= link_to "Admin section", '/admin' %> |
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <% else %>
   <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+<% @work_pieces.each do |w| %>
+  <p><%= link_to w.title, portfolio_path(w) %></p>
 <% end %>

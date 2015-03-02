@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
-  get 'portfolio/index'
-
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root 'portfolio#index'
+  resources :portfolio, only: [:index, :show]
 
   authenticate :user do
-    namespace :admin do
+    scope :admin, module: "admin" do
+      get "/" => "work_pieces#index"
       resources :work_pieces
     end
   end
+
+  # You can have the root of your site routed with "root"
+  root 'portfolio#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
