@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'portfolio#index'
 
-  resources :work_pieces
+  authenticate :user do
+    namespace :admin do
+      resources :work_pieces
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

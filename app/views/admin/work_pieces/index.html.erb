@@ -1,6 +1,6 @@
 <h1>Work pieces</h1>
 
-<%= link_to 'New work piece', new_work_piece_path %>
+<%= link_to 'New work piece', new_admin_work_piece_path %>
 
 <table>
   <thead>
@@ -13,9 +13,9 @@
   <% @work_pieces.each do |w| %>
     <tbody>
       <td>
-        <%= link_to 'Show', work_piece_path(w) %>
-        <%= link_to 'Edit', edit_work_piece_path(w) %>
-        <%= link_to 'Delete', work_piece_path(w), method: :delete,
+        <%= link_to 'Show', admin_work_piece_path(w) %>
+        <%= link_to 'Edit', edit_admin_work_piece_path(w) %>
+        <%= link_to 'Delete', admin_work_piece_path(w), method: :delete,
           data: { confirm: 'Are you sure?' } %>
       </td>
       <td><%= w.title %></td>

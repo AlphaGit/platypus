@@ -1,4 +1,4 @@
-class WorkPiecesController < ApplicationController
+class Admin::WorkPiecesController < ApplicationController
   def index
     @work_pieces = WorkPiece.all
   end
