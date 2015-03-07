@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214160443) do
+ActiveRecord::Schema.define(version: 20150307025220) do
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "var",        limit: 255,   null: false
+    t.text     "value",      limit: 65535
+    t.integer  "thing_id",   limit: 4
+    t.string   "thing_type", limit: 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
