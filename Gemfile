@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 # Application settings, singleton style
-gem "rails-settings-cached", "0.3.1"
+gem "rails-settings-cached", "0.4.1"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,9 @@
+<h1>Settings</h1>
+<%= form_tag settings_path, method: :put do %>
+  <% @settings.each_pair do |setting_key, setting_value| %>
+    <%= label_tag setting_key %>
+    <%= text_field_tag "settings[#{setting_key}]", setting_value %>
+    <br /><br />
+  <% end %>
+  <%= submit_tag %>
+<% end %>
