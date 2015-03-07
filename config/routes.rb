@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     scope :admin, module: "admin" do
       get "/" => "work_pieces#index"
       resources :work_pieces
+      resource :settings, only: [:show, :update]
     end
   end
 
