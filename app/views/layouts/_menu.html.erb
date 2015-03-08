@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>.
+      <li><%= link_to "Admin section", '/admin' %></li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    <% else %>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
+    <% end %>
+    <li><%= link_to 'Portfolio', portfolio_index_path %></li>
+  </ul>
+</nav>
