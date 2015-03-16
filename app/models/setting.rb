@@ -1,6 +1,7 @@
 class Setting < RailsSettings::CachedSettings
   defaults[:site_name] = "My portfolio"
-  defaults[:show_site_logo] = false;
+  defaults[:show_site_logo] = false
+  defaults[:site_logo] = nil
 
   # Overwriting default behavior because get_all won't return defaults
   # See https://github.com/huacnlee/rails-settings-cached/pull/56
