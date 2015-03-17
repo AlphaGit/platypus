@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= render "layouts/admin/menu" %>
-
-<%= yield %>
-
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <%= render "layouts/admin/menu" %>
+
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>

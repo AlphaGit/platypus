@@ -1,18 +1,20 @@
 <header>
   <% if Setting.show_site_logo %>
-    <%= image_tag Setting.site_logo %>
+    <%= image_tag Setting.site_logo, class: "site-logo" %>
   <% end %>
 
   <nav>
     <ul>
+      <li><%= link_to 'Portfolio', portfolio_index_path %></li>
       <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>.
         <li><%= link_to "Admin section", '/admin' %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <li>
+          Signed in as <%= current_user.email %>.
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        </li>
       <% else %>
         <li><%= link_to "Sign in", new_user_session_path %></li>
       <% end %>
-      <li><%= link_to 'Portfolio', portfolio_index_path %></li>
     </ul>
   </nav>
 

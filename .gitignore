@@ -18,3 +18,5 @@
 *.sublime-workspace
 
 public/system/work_pieces/images/*
+public/settings/*
+!public/settings/.keep
