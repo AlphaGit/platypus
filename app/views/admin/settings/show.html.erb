@@ -1,19 +1,19 @@
 <h1>Settings</h1>
 <%= form_tag settings_path, method: :put, multipart: true do %>
   <% @settings.each_pair do |setting_key, setting_value| %>
-    <% if [:site_logo].include? setting_key.to_sym %>
+    <div class="setting">
       <%= label_tag setting_key %>
-      <%= file_field_tag "settings[#{setting_key}]", accept: 'image/png,image/gif,image/jpeg' %>
-      <% if setting_value.present? %>
-        <%= image_tag setting_value, alt: setting_key %>
+      <% if [:site_logo].include? setting_key.to_sym %>
+        <%= file_field_tag "settings[#{setting_key}]", accept: 'image/png,image/gif,image/jpeg' %>
+        <% if setting_value.present? %>
+          <%= image_tag setting_value, alt: setting_key %>
+        <% else %>
+          (No image currently set.)
+        <% end %>
       <% else %>
-        (No image currently set.)
+        <%= text_field_tag "settings[#{setting_key}]", setting_value %>
       <% end %>
-    <% else %>
-      <%= label_tag setting_key %>
-      <%= text_field_tag "settings[#{setting_key}]", setting_value %>
-    <% end %>
-    <br /><br />
+    </div>
   <% end %>
   <%= submit_tag %>
 <% end %>
