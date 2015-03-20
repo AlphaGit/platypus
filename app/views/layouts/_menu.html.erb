@@ -1,6 +1,8 @@
 <header>
   <% if Setting.show_site_logo %>
-    <%= image_tag Setting.site_logo, class: "site-logo" %>
+    <div class="site-logo-container">
+      <%= image_tag Setting.site_logo, class: "site-logo" %>
+    </div>
   <% end %>
 
   <nav>

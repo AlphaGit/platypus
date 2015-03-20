@@ -39,12 +39,17 @@ body {
 }
 
 header {
+  .site-logo-container {
+    text-align: center;
+  }
+
   .site-logo {
     max-height: 300px;
   }
 }
 
 main {
+  display: block;
   margin-left: 1em;
   margin-right: 1em;
 }
