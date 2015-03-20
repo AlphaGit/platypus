@@ -1,0 +1,27 @@
+// Place all the styles related to the work_pieces controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  border: 1px solid black;
+  padding: 10px;
+  padding-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th {
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  td {
+    border-top: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    vertical-align: top;
+  }
+
+  .actions {
+    font-size: 0.8em;
+  }
+}

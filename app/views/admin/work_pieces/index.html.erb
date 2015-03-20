@@ -1,25 +1,31 @@
 <h1>Work pieces</h1>
 
-<%= link_to 'New work piece', new_work_piece_path %>
+<p><%= link_to 'Add new work piece', new_work_piece_path %></p>
 
 <table>
   <thead>
     <tr>
-      <th>Actions</th>
+      <th>Thumbnail</th>
       <th>Title</th>
       <th>Description</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <% @work_pieces.each do |w| %>
     <tbody>
       <td>
-        <%= link_to 'Show', work_piece_path(w) %>
-        <%= link_to 'Edit', edit_work_piece_path(w) %>
-        <%= link_to 'Delete', work_piece_path(w), method: :delete,
-          data: { confirm: 'Are you sure?' } %>
+        <%= link_to work_piece_path(w) do %>
+          <%= image_tag w.image.url(:small) %>
+        <% end %>
       </td>
       <td><%= w.title %></td>
       <td><%= w.description %></td>
+      <td class="actions">
+        <%= link_to 'Show details', work_piece_path(w) %> |
+        <%= link_to 'Edit', edit_work_piece_path(w) %> |
+        <%= link_to 'Delete', work_piece_path(w), method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+      </td>
     </tbody>
   <% end %>
 </table>
