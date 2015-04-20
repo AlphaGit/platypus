@@ -1,4 +1,8 @@
 <h1>Portfolio</h1>
-<% @work_pieces.each do |w| %>
-  <p><%= link_to w.title, portfolio_path(w) %></p>
-<% end %>
+<div class="portfolio">
+  <% @work_pieces.each do |w| %>
+    <div class="work-piece">
+      <%= image_tag w.image.url(:medium) %>
+    </div>
+  <% end %>
+</div>
