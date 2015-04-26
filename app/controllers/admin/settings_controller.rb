@@ -1,6 +1,7 @@
 class Admin::SettingsController < Admin::BaseController
   def show
     @boolean_settings = Setting.boolean_settings
+    @multiple_option_settings = Setting.multiple_option_settings
     @settings = Setting.get_all
   end
 

@@ -13,6 +13,8 @@
         <% end %>
       <% elsif @boolean_settings.include? setting_key.to_sym %>
         <%= check_box_tag "settings[#{setting_key}]", "1", setting_value %>
+      <% elsif @multiple_option_settings.include? setting_key.to_sym %>
+        <%= collection_select("settings", setting_key, @multiple_option_settings[setting_key.to_sym], :to_sym, :as_readable_option, { :selected => setting_value }) %>
       <% else %>
         <%= text_field_tag "settings[#{setting_key}]", setting_value %>
       <% end %>

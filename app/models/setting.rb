@@ -2,8 +2,12 @@ class Setting < RailsSettings::CachedSettings
   defaults[:site_name] = "My portfolio"
   defaults[:show_site_logo] = false
   defaults[:site_logo] = nil
+  defaults[:show_copyright_notice] = :copyright_on_footer
   defaults[:show_site_name] = true
 
+  @@multiple_option_settings = {
+    :show_copyright_notice => [:copyright_on_footer, :copyright_below_title, :no_copyright]
+  }
   @@boolean_settings = [:show_site_name, :show_site_logo]
 
   # Overwriting default behavior because get_all won't return defaults
@@ -26,6 +30,10 @@ class Setting < RailsSettings::CachedSettings
       result[key] = value if starting_with.nil? || key.start_with?(starting_with)
     end
     result.with_indifferent_access
+  end
+
+  def self.multiple_option_settings
+    @@multiple_option_settings
   end
 
   def self.boolean_settings
