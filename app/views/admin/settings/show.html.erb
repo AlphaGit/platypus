@@ -2,6 +2,7 @@
 <%= form_tag settings_path, method: :put, multipart: true do %>
   <% @settings.each_pair do |setting_key, setting_value| %>
     <div class="setting">
+
       <%= label_tag setting_key %>
       <% if [:site_logo].include? setting_key.to_sym %>
         <%= file_field_tag "settings[#{setting_key}]", accept: 'image/png,image/gif,image/jpeg' %>
@@ -10,9 +11,12 @@
         <% else %>
           (No image currently set.)
         <% end %>
+      <% elsif @boolean_settings.include? setting_key.to_sym %>
+        <%= check_box_tag "settings[#{setting_key}]", "1", setting_value %>
       <% else %>
         <%= text_field_tag "settings[#{setting_key}]", setting_value %>
       <% end %>
+
     </div>
   <% end %>
   <%= submit_tag %>

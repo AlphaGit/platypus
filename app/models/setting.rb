@@ -2,6 +2,9 @@ class Setting < RailsSettings::CachedSettings
   defaults[:site_name] = "My portfolio"
   defaults[:show_site_logo] = false
   defaults[:site_logo] = nil
+  defaults[:show_site_name] = true
+
+  @@boolean_settings = [:show_site_name, :show_site_logo]
 
   # Overwriting default behavior because get_all won't return defaults
   # See https://github.com/huacnlee/rails-settings-cached/pull/56
@@ -23,5 +26,9 @@ class Setting < RailsSettings::CachedSettings
       result[key] = value if starting_with.nil? || key.start_with?(starting_with)
     end
     result.with_indifferent_access
+  end
+
+  def self.boolean_settings
+    @@boolean_settings
   end
 end

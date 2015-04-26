@@ -1,5 +1,6 @@
 class Admin::SettingsController < Admin::BaseController
   def show
+    @boolean_settings = Setting.boolean_settings
     @settings = Setting.get_all
   end
 
@@ -19,6 +20,12 @@ class Admin::SettingsController < Admin::BaseController
         Setting.send("#{setting_key}=", setting_value)
       end
     end
+
+    missing_booleans = Setting.boolean_settings - params[:settings].keys.map(&:to_sym)
+    missing_booleans.each do |setting_key|
+      Setting.send("#{setting_key}=", false)
+    end
+
     redirect_to settings_path
   end
 end

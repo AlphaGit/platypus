@@ -4,6 +4,11 @@
       <%= image_tag Setting.site_logo, class: "site-logo" %>
     </div>
   <% end %>
+  <% if Setting.show_site_name %>
+    <div class="site-name">
+      <%= Setting.site_name %>
+    </div>
+  <% end %>
 
   <nav>
     <ul>
