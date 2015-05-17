@@ -1,5 +1,5 @@
 nav {
-  border-top: 1px solid black;
+  font-family: 'Open Sans', sans-serif;
   border-bottom: 1px solid black;
 
   ul {
@@ -10,14 +10,18 @@ nav {
     padding-left: 0;
 
     li {
-      font-size: 0.8rem;
-      padding-top: 0.8em;
-      padding-bottom: 0.8em;
-      padding-right: 1em;
-      padding-left: 1em;
+      font-size: 1.3rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
       display: inline-block;
-      border-right: 1px solid black;
       height: 100%;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }
