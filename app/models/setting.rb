@@ -3,6 +3,7 @@ class Setting < RailsSettings::CachedSettings
   defaults[:show_site_logo] = false
   defaults[:site_logo] = nil
   defaults[:show_copyright_notice] = :copyright_on_footer
+  defaults[:copyright_holder_name] = "Me"
   defaults[:show_site_name] = true
 
   @@multiple_option_settings = {
