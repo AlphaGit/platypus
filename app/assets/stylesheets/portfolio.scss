@@ -26,3 +26,33 @@
     margin: auto;
   }
 }
+
+.work-piece-detail {
+  margin-top: 1rem;
+  overflow: auto;
+  zoom: 1;
+
+  img {
+    border: 5px solid white;
+    float: left;
+    margin-right: 7rem;
+  }
+
+
+  .work-piece-image {
+    width: 60%;
+    border-right: 1px solid black;
+    text-align: center;
+    display: inline-block;
+
+  }
+
+  p {
+    margin-right: 7rem;
+  }
+
+  h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+}

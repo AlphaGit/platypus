@@ -2,7 +2,9 @@
 <div class="portfolio">
   <% @work_pieces.each do |w| %>
     <div class="work-piece">
-      <%= image_tag w.image.url(:medium) %>
+      <%= link_to portfolio_path(w) do %>
+        <%= image_tag w.image.url(:medium) %>
+      <% end %>
     </div>
   <% end %>
 </div>

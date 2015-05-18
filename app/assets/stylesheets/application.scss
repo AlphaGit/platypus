@@ -70,3 +70,13 @@ h1 {
   text-align: center;
   font-size: 1.5rem;
 }
+
+a.back-link {
+  font-size: 0.9rem;
+  color: #0056a2;
+
+  &:visited {
+    font-size: 0.9rem;
+    color: #0056a2;
+  }
+}
