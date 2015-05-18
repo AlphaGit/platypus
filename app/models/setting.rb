@@ -30,6 +30,7 @@ class Setting < RailsSettings::CachedSettings
       next if key.nil? || result.has_key?(key)
       result[key] = value if starting_with.nil? || key.start_with?(starting_with)
     end
+
     result.with_indifferent_access
   end
 

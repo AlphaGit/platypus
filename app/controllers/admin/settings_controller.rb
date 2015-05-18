@@ -17,6 +17,9 @@ class Admin::SettingsController < Admin::BaseController
         file_path = "/settings/site_logo#{extension}"
         File.open("#{private_path}/#{file_path}", "w+b") { |f| f.write(setting_value.read) }
         Setting.site_logo = file_path
+      elsif
+        Setting.multiple_option_settings.include? setting_key.to_sym
+        Setting.send("#{setting_key}=", setting_value.to_sym)
       else
         Setting.send("#{setting_key}=", setting_value)
       end
