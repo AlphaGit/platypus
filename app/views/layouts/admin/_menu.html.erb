@@ -1,9 +1,10 @@
 <% content_for :secondary_navigation do %>
   <nav class="secondary-menu">
     <ul>
-      <li><%= link_to 'Exit admin panel', root_path %></li>
-      <li><%= link_to 'Work pieces', work_pieces_path %></li>
       <li><%= link_to 'App settings', settings_path %></li>
+      <li><%= link_to 'Work pieces', work_pieces_path %></li>
+      <li><%= link_to 'Edit biography', admin_biography_path %></li>
+      <li><%= link_to 'Exit admin panel', root_path %></li>
     </ul>
   </nav>
 <% end %>
