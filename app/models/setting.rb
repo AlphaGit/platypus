@@ -6,11 +6,12 @@ class Setting < RailsSettings::CachedSettings
   defaults[:copyright_holder_name] = "Me"
   defaults[:show_site_name] = true
   defaults[:show_sign_in_link] = true
+  defaults[:show_bio_page] = false
 
   @@multiple_option_settings = {
     :show_copyright_notice => [:copyright_on_footer, :copyright_below_title, :no_copyright]
   }
-  @@boolean_settings = [:show_site_name, :show_site_logo, :show_sign_in_link]
+  @@boolean_settings = [:show_site_name, :show_site_logo, :show_sign_in_link, :show_bio_page]
 
   # Overwriting default behavior because get_all won't return defaults
   # See https://github.com/huacnlee/rails-settings-cached/pull/56

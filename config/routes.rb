@@ -10,11 +10,14 @@ Rails.application.routes.draw do
       get "/" => "work_pieces#index"
       resources :work_pieces
       resource :settings, only: [:show, :update]
+      resource :biography, only: [:show, :update]
     end
   end
 
   # You can have the root of your site routed with "root"
   root 'portfolio#index'
+
+  get 'biography' => 'biography#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
