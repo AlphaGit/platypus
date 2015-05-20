@@ -6,6 +6,7 @@ debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password
 debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password '
 apt-get install -y git curl nodejs mysql-server-5.5 mysql-client-5.5 libmysqlclient-dev > /dev/null
 apt-get install -y imagemagick --fix-missing
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --rails --quiet-curl
 source /usr/local/rvm/scripts/rvm
 rvm requirements
