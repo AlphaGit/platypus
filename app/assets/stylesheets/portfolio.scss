@@ -15,15 +15,21 @@
   margin-top: 10px;
   margin-left: 10px;
 
-  img {
-    max-width: 200px;
-    max-height: 200px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  a {
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    img {
+      max-width: 200px;
+      max-height: 200px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
   }
 }
 
