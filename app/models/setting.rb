@@ -7,6 +7,7 @@ class Setting < RailsSettings::CachedSettings
   defaults[:show_site_name] = true
   defaults[:show_sign_in_link] = true
   defaults[:show_bio_page] = false
+  defaults[:google_analytics_code] = nil
 
   @@multiple_option_settings = {
     :show_copyright_notice => [:copyright_on_footer, :copyright_below_title, :no_copyright]
