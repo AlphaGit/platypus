@@ -44,6 +44,9 @@ gem "paperclip", "~> 4.2"
 # Use mercury for inline rich text editing
 gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 
+# AWS SDK for uploading the images to an S3 bucket
+gem 'aws-sdk', '< 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
