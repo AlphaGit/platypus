@@ -21,7 +21,7 @@
         <li><%= link_to "Admin section", '/admin' %></li>
         <li>
           Signed in as <%= current_user.email %>.
-          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+          <%= link_to "(Sign out)", destroy_user_session_path, :method => :delete %>
         </li>
       <% elsif Setting.show_sign_in_link %>
         <li><%= link_to "Sign in", new_user_session_path %></li>
