@@ -1,6 +1,5 @@
 class Setting < RailsSettings::CachedSettings
   defaults[:site_name] = "My portfolio"
-  defaults[:show_site_logo] = false
   defaults[:site_logo] = nil
   defaults[:show_copyright_notice] = :copyright_on_footer
   defaults[:copyright_holder_name] = "Me"
@@ -8,11 +7,13 @@ class Setting < RailsSettings::CachedSettings
   defaults[:show_sign_in_link] = true
   defaults[:show_bio_page] = false
   defaults[:google_analytics_code] = nil
+  defaults[:show_site_logo] = :none
 
   @@multiple_option_settings = {
-    :show_copyright_notice => [:copyright_on_footer, :copyright_below_title, :no_copyright]
+    :show_copyright_notice => [:copyright_on_footer, :copyright_below_title, :no_copyright],
+    :show_site_logo => [:none, :logo_on_header, :logo_on_footer]
   }
-  @@boolean_settings = [:show_site_name, :show_site_logo, :show_sign_in_link, :show_bio_page]
+  @@boolean_settings = [:show_site_name, :show_sign_in_link, :show_bio_page]
 
   # Overwriting default behavior because get_all won't return defaults
   # See https://github.com/huacnlee/rails-settings-cached/pull/56

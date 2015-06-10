@@ -11,7 +11,14 @@
   </script>
 <% end %>
 <footer>
+  <% if Setting.show_site_logo == :logo_on_footer %>
+    <div class="site-logo-container">
+      <%= image_tag Setting.site_logo, class: "site-logo" %>
+    </div>
+  <% end %>
   <% if Setting.show_copyright_notice == :copyright_on_footer %>
-    &copy; <%= Setting.copyright_holder_name %> <%= Time.now.year %>
+    <div class="copyright-notice">
+      &copy; <%= Setting.copyright_holder_name %> <%= Time.now.year %>
+    </div>
   <% end %>
 </footer>

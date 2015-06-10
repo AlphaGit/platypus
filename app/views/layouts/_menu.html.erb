@@ -1,5 +1,5 @@
 <header>
-  <% if Setting.show_site_logo %>
+  <% if Setting.show_site_logo == :logo_on_header %>
     <div class="site-logo-container">
       <%= image_tag Setting.site_logo, class: "site-logo" %>
     </div>
