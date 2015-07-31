@@ -32,6 +32,7 @@ body {
   background: -o-linear-gradient(top, white 0,#aaaab7 600px, #aaaab7 0); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, white 0,#aaaab7 600px, #aaaab7 0); /* IE10+ */
   background: linear-gradient(to bottom, white 0,#aaaab7 600px, #aaaab7 0); /* W3C */
+  background-attachment: fixed;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='white', endColorstr='#aaaab7',GradientType=0 ); /* IE6-8 */
 
   font-family: Helvetica;
