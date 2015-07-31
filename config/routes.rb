@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :work_pieces
       resource :settings, only: [:show, :update]
       resource :biography, only: [:show, :update], as: 'admin_biography'
+      resources :menu_items
     end
   end
 

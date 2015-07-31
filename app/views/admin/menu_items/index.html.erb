@@ -1,0 +1,25 @@
+<h1>Custom menus</h1>
+
+<p><%= link_to 'Add new custom menu', new_menu_item_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <% @menu_items.each do |w| %>
+    <tbody>
+      <td><%= w.title %></td>
+      <td><%= w.link %></td>
+      <td class="actions">
+        <%= link_to 'Show details', menu_item_path(w) %> |
+        <%= link_to 'Edit', edit_menu_item_path(w) %> |
+        <%= link_to 'Delete', menu_item_path(w), method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tbody>
+  <% end %>
+</table>

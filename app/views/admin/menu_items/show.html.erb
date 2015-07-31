@@ -1,0 +1,5 @@
+<h1><%= @menu_item.title %></h1>
+<p><strong>Title:</strong> <%= @menu_item.title %></p>
+<p><strong>Links to:</strong> <%= link_to @menu_item.link, @menu_item.link, :target => "_blank" %></p>
+<%= link_to 'Back to listing', menu_items_path %>
+<%= link_to 'Edit', edit_menu_item_path(@menu_item) %>

@@ -1,0 +1,27 @@
+<%= form_for @menu_item do |f| %>
+  <% if @menu_item.errors.any? %>
+    <p>
+      <%= pluralize(@menu_item.errors.count, "error") %> found when trying to
+      save this custom menu:
+    </p>
+    <ul>
+      <% @menu_item.errors.full_messages.each do |error_msg| %>
+        <li><%= error_msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

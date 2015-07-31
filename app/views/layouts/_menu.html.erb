@@ -17,6 +17,10 @@
         <li><%= link_to 'Bio', biography_path %></li>
       <% end %>
 
+      <% MenuItem.all_for_display.each do |menu| %>
+      <li><%= link_to menu.title, menu.link %></li>
+      <% end %>
+
       <% if user_signed_in? %>
         <li><%= link_to "Admin section", '/admin' %></li>
         <li>
