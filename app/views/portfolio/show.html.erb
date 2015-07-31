@@ -1,6 +1,6 @@
 <article class="work-piece-detail">
   <%= image_tag @work_piece.image.url(:medium) %>
   <h1><%= @work_piece.title %></h1>
-  <p><%= @work_piece.description %></p>
+  <p><%= simple_format @work_piece.description %></p>
   <p><%= link_to 'Back to portfolio', portfolio_index_path, { :class => "back-link" } %></p>
 </article>
