@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730200427) do
+ActiveRecord::Schema.define(version: 20150915103224) do
 
   create_table "biographies", force: :cascade do |t|
     t.text     "content",    limit: 65535
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20150730200427) do
   end
 
   add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true, using: :btree
+
+  create_table "site_assets", force: :cascade do |t|
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.string   "file_name",          limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

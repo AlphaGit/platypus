@@ -1,5 +1,3 @@
-== README
-
 ```console
 git clone git@github.com:AlphaGit/platypus.git
 cd platypus

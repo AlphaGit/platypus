@@ -7,16 +7,12 @@ class Admin::SettingsController < Admin::BaseController
 
   def update
     params[:settings].each_pair do |setting_key, setting_value|
+      next unless setting_value.present?
       if [:site_logo].include? setting_key.to_sym
-        next unless setting_value.present?
-        extension = File.extname(setting_value.original_filename)
-        # TODO improve path generation to be of a more generic usage:
-        # - OS-agnostic separators
-        # - Take asset path from somewhere in Rails
-        private_path = "public/"
-        file_path = "/settings/site_logo#{extension}"
-        File.open("#{private_path}/#{file_path}", "w+b") { |f| f.write(setting_value.read) }
-        Setting.site_logo = file_path
+        logo_asset = SiteAsset.new(:image => setting_value, :file_name => setting_value.original_filename)
+        if logo_asset.save
+          Setting.site_logo = logo_asset.image.url
+        end
       elsif
         Setting.multiple_option_settings.include? setting_key.to_sym
         Setting.send("#{setting_key}=", setting_value.to_sym)
