@@ -8,8 +8,6 @@ class Setting < RailsSettings::CachedSettings
   defaults[:show_bio_page] = false
   defaults[:google_analytics_code] = nil
   defaults[:show_site_logo] = :none
-  defaults[:emails_from] = "admin@example.com"
-  defaults[:site_url] = "http://mysite.example.com"
 
   @@multiple_option_settings = {
     :show_copyright_notice => [:copyright_on_footer, :copyright_below_title, :no_copyright],
