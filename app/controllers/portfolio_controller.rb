@@ -1,6 +1,6 @@
 class PortfolioController < ApplicationController
   def index
-    @work_pieces = WorkPiece.all
+    @work_pieces = WorkPiece.order(:position)
   end
 
   def show

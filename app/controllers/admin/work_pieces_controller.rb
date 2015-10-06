@@ -1,6 +1,6 @@
 class Admin::WorkPiecesController < Admin::BaseController
   def index
-    @work_pieces = WorkPiece.all
+    @work_pieces = WorkPiece.order(:position)
   end
 
   def show
@@ -31,6 +31,17 @@ class Admin::WorkPiecesController < Admin::BaseController
     else
       render 'edit'
     end
+  end
+
+  def sort
+    @work_pieces = WorkPiece.all
+    # TODO prevent SELECT N+1
+    @work_pieces.each do |w|
+      w.position = params['work_piece'].index(w.id.to_s) + 1
+      w.save
+    end
+
+    render :nothing => true
   end
 
   def destroy

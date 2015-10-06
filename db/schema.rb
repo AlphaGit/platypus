@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915103224) do
+ActiveRecord::Schema.define(version: 20151006104626) do
 
   create_table "biographies", force: :cascade do |t|
     t.text     "content",    limit: 65535
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150915103224) do
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
+    t.integer  "position",           limit: 4
   end
 
 end

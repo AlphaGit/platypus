@@ -29,6 +29,9 @@ gem 'devise'
 # Application settings, singleton style
 gem "rails-settings-cached", "0.4.1"
 
+# For sorting the different work pieces
+gem "acts_as_list"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

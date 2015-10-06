@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   authenticate :user do
     scope :admin, module: "admin" do
       get "/" => "work_pieces#index"
-      resources :work_pieces
+      resources :work_pieces do
+        post :sort, on: :collection
+      end
       resource :settings, only: [:show, :update]
       resource :biography, only: [:show, :update], as: 'admin_biography'
       resources :menu_items

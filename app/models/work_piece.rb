@@ -1,4 +1,6 @@
 class WorkPiece < ActiveRecord::Base
+  acts_as_list
+
   has_attached_file :image,
     :styles => {
       :small => "150x150>",
