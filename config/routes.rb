@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get "/" => "work_pieces#index"
       resources :work_pieces do
         post :sort, on: :collection
+        post :change_visibility
       end
       resource :settings, only: [:show, :update]
       resource :biography, only: [:show, :update], as: 'admin_biography'

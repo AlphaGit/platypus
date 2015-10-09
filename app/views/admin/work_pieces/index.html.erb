@@ -16,7 +16,7 @@
   </thead>
   <tbody id="work_pieces">
     <% @work_pieces.each do |w| %>
-      <tr id="work_piece_<%= w.id %>">
+      <tr id="work_piece_<%= w.id %>" class="<%= w.is_visible ? '' : 'is_private' %>">
         <td>
           <%= link_to work_piece_path(w) do %>
             <%= image_tag w.image.url(:small) %>
@@ -29,7 +29,8 @@
           <%= link_to 'Edit', edit_work_piece_path(w) %> |
           <%= link_to 'Delete', work_piece_path(w), method: :delete,
             data: { confirm: 'Are you sure?' } %> |
-          <span class="handle">[Drag to reorder]</span>
+          <span class="handle">[Drag to reorder]</span> |
+          <%= link_to w.is_visible ? 'Hide in portfolio' : 'Show in portfolio', work_piece_change_visibility_path(w), method: :post %>
         </td>
       </tr>
     <% end %>

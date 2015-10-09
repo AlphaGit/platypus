@@ -51,6 +51,12 @@ class Admin::WorkPiecesController < Admin::BaseController
     redirect_to work_pieces_path
   end
 
+  def change_visibility
+    @work_piece = WorkPiece.find(params[:work_piece_id])
+    @work_piece.toggle!(:is_visible)
+    redirect_to work_pieces_path
+  end
+
   private
 
   def work_piece_parameters
