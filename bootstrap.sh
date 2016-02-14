@@ -10,9 +10,9 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --rails --quiet-curl
 source /usr/local/rvm/scripts/rvm
 rvm requirements
-rvm install 2.2.0
+rvm install 2.2.4
 rvm docs generate-ri
-rvm use 2.2.0 --default
+rvm use 2.2.4 --default
 ruby -v
 gem install bundler rails
 ln -s /vagrant /platypus
