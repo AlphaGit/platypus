@@ -115,8 +115,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    puma (2.11.3)
-      rack (>= 1.1, < 2.0)
+    puma (4.3.1)
+      nio4r (~> 2.0)
     rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
